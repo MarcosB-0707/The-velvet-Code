@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <title>The Velvet Code</title>
+</head>
+<body>
+    <h1>El Codigo De Terciopelo</h1>
+        <audio id="audio-player" autoplay loop>
+            <source src="audio/the-destiny-waltz.mp3" type="audio/mpeg">
+        </audio>
+        <div>
+            <!-- Control deslizante de volumen -->
+            <label for="volume">Volumen:</label>
+            <input type="range" id="volume" name="volume" min="0" max="1" step="0.01" value="1">
+            <br><br>
+            
+            <!-- Botones para subir y bajar el volumen -->
+            <button onclick="adjustVolume('up')">+</button>
+            <button onclick="adjustVolume('down')">-</button>
+            
+            <!-- Botón para pausar o reanudar la música -->
+            <button onclick="togglePlayPause()">Pausa/Play</button>
+        
+            <script>
+                var audioPlayer = document.getElementById('audio-player');
+                var volumenControl = document.getElementById('volume');
+                
+                // Control de volumen con control deslizante
+                volumenControl.addEventListener('input', function() {
+                    audioPlayer.volume = volumenControl.value;
+                });
+        
+                // Función para pausar o reanudar la música
+                function togglePlayPause() {
+                    if (audioPlayer.paused || audioPlayer.ended) {
+                        audioPlayer.play(); // Si está en pausa o terminó, reproduce desde donde quedó
+                    } else {
+                        audioPlayer.pause(); // Si está reproduciendo, lo pausa
+                    }
+                }
+        
+                // Función para subir o bajar el volumen
+                function adjustVolume(action) {
+                    if (action === 'up' && audioPlayer.volume < 1) {
+                        audioPlayer.volume += 0.1;  // Sube el volumen en pasos de 0.1
+                    } else if (action === 'down' && audioPlayer.volume > 0) {
+                        audioPlayer.volume -= 0.1;  // Baja el volumen en pasos de 0.1
+                    }
+                    volumenControl.value = audioPlayer.volume;  // Actualiza el control deslizante
+                }
+            </script>
+        </div>
+
+        <div class="container">
+        <h2>El Enigma de los Susurros Nocturnos: La Red de Sombras</h2>
+            <div class="floating-box hidden">El año es 1894. En las oscuras noches de Tokio, un enigma milenario emerge de las sombras, y solo aquellos con una mente aguda, como la de Astolfo, el joven samurái, pueden desentrañar sus secretos. El misterio comienza con una carta sellada que le llega por correo urgente, acompañada de un extraño cuaderno rojo, con inscripciones y símbolos que parecen sacados de una leyenda olvidada.
+            </div>
+            <br>
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                  const floatingBoxes = document.querySelectorAll(".floating-box");
+                  
+                  floatingBoxes.forEach((box, index) => {
+                    setTimeout(() => {
+                      box.classList.add("visible");
+                    }, index * 500); // Aparece cada cuadro con un retraso de 500ms
+                  });
+                });
+              </script>
+         
+         <div class="floating-box hidden">La carta, escrita en una caligrafía exquisita pero temblorosa, dice:</div>
+         <br>
+
+        <div class="floating-box hidden"> <i>"Astolfo, el tiempo corre. En tus manos está el destino de lo que permanece oculto, un conocimiento ancestral perdido en las guerras que rasgaron el alma del país. Solo aquel que desentrañe la red de sombras comprenderá la magnitud del poder que se esconde en la verdad. Tu viaje comienza en el lugar donde la luz se encuentra con la oscuridad."</i>
+        </div>
+        <br>
+        <div class="floating-box hidden">Astolfo, con una mirada aguda y la mente afilada por años de entrenamiento, comprende que su próxima pista está oculta en las palabras de la carta. Con el cuaderno rojo en mano, observa los símbolos que adornan las páginas, las cuales parecen tener un significado especial.</div>
+        
+        <h3>El Primer Acertijo:</h3>
+
+        <div class="floating-box hidden">Al pasar la primera página del cuaderno, encuentra un enigma escrito en caracteres antiguos:</div>
+        <br>
+    </div>
+    <div>
+      
+        <label for="respuesta">Tu respuesta:</label>
+        <input type="text" id="respuesta" placeholder="Escribe tu respuesta aquí">
+        <button class="fancy_button" onclick="verificarRespuesta()">Verificar respuesta</button>
+
+        <p id="mensaje"></p>
+        <p id="pista"></p>
+
+        <!-- Enlace a la siguiente página (aparece solo si la respuesta es correcta) -->
+        <a id="siguiente-acertijo" href="secondpage.html" style="display:none;">Ir al segundo acertijo</a>
+
+        <script class="answer">
+            var intentos = 0; // Contador de intentos fallidos
+            var respuestasAlternativas = ["el reflejo de la luna en el agua", "el reflejo de la luna", "reflejo luna"]; // Respuestas correctas posibles
+            var pista = "Pista: Piensa en la luna y su conexión con el agua. ¿Qué aparece cuando la luz se refleja en una superficie líquida?"; // Pista única
+
+            function verificarRespuesta() {
+                // Obtener la respuesta del usuario
+                var respuestaUsuario = document.getElementById('respuesta').value.trim().toLowerCase();
+
+                // Mensaje de resultado
+                var mensaje = document.getElementById('mensaje');
+                var pistaElemento = document.getElementById('pista');
+                var siguienteAcertijo = document.getElementById('siguiente-acertijo');
+
+                // Verificar si la respuesta es correcta
+                if (respuestasAlternativas.includes(respuestaUsuario)) {
+                    mensaje.innerHTML = "<strong>¡Correcto!</strong> Has resuelto el acertijo. La puerta secreta se ha abierto.";
+                    pistaElemento.innerHTML = ""; // Limpiar pistas si la respuesta es correcta
+                    siguienteAcertijo.style.display = "block"; // Mostrar el enlace al siguiente acertijo
+                } else {
+                    intentos++; // Aumentar contador de intentos fallidos
+
+                    if (intentos < 5) {
+                        mensaje.innerHTML = "<strong>Incorrecto</strong>. Intenta de nuevo.";
+                        pistaElemento.innerHTML = ""; // Limpiar pista si no se ha alcanzado el límite de intentos
+                    } else {
+                        // Mostrar la pista luego de 5 intentos fallidos
+                        mensaje.innerHTML = "<strong>Incorrecto</strong>. Has fallado varias veces, aquí tienes una pista:";
+                        pistaElemento.innerHTML = pista; // Mostrar la pista única
+                    }
+                }
+            }
+        </script>
+    </div>
+
+</body>
+</html>

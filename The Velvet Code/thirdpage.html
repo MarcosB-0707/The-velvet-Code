@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <title>The Velvet Code</title>
+    <link rel="stylesheet" href="main.css" type="text/css">
+</head>
+<body>
+
+
+    <audio id="audio-player" autoplay loop>
+        <source src="audio/pista-3.mp3" type="audio/mpeg">
+    </audio>
+    <div>
+        <!-- Control deslizante de volumen -->
+        <label for="volume">Volumen:</label>
+        <input type="range" id="volume" name="volume" min="0" max="1" step="0.01" value="1">
+        <br><br>
+        
+        <!-- Botones para subir y bajar el volumen -->
+        <button onclick="adjustVolume('up')">+</button>
+        <button onclick="adjustVolume('down')">-</button>
+        
+        <!-- Botón para pausar o reanudar la música -->
+        <button onclick="togglePlayPause()">Pausa/Play</button>
+    
+        <script>
+            var audioPlayer = document.getElementById('audio-player');
+            var volumenControl = document.getElementById('volume');
+            
+            // Control de volumen con control deslizante
+            volumenControl.addEventListener('input', function() {
+                audioPlayer.volume = volumenControl.value;
+            });
+    
+            // Función para pausar o reanudar la música
+            function togglePlayPause() {
+                if (audioPlayer.paused || audioPlayer.ended) {
+                    audioPlayer.play(); // Si está en pausa o terminó, reproduce desde donde quedó
+                } else {
+                    audioPlayer.pause(); // Si está reproduciendo, lo pausa
+                }
+            }
+    
+            // Función para subir o bajar el volumen
+            function adjustVolume(action) {
+                if (action === 'up' && audioPlayer.volume < 1) {
+                    audioPlayer.volume += 0.1;  // Sube el volumen en pasos de 0.1
+                } else if (action === 'down' && audioPlayer.volume > 0) {
+                    audioPlayer.volume -= 0.1;  // Baja el volumen en pasos de 0.1
+                }
+                volumenControl.value = audioPlayer.volume;  // Actualiza el control deslizante
+            }
+        </script>
+    <div class="container">
+        <section>
+                <div class="floating-box hidden">Al responder correctamente al enigma de las sombras, Astolfo observó cómo las páginas del cuaderno rojo comenzaban a brillar una vez más. Los símbolos, antes difusos y oscuros, cobraban vida y se reorganizaban a una velocidad inquietante. En ese preciso momento, un sentimiento helado recorrió su espalda, como si algo estuviera despertando en las profundidades del bosque, algo mucho más antiguo y peligroso.</div>
+                <br>
+                <div class="floating-box hidden"><i>"La red está cerrándose, Astolfo. Cada palabra que leas es un paso más hacia el final. Tu destino está atado a este lugar, y tu alma, a nosotros."</i></div>
+                <br>
+                <div class="floating-box hidden">Un estremecimiento recorrió su cuerpo al leer estas palabras. El cuaderno no era solo un libro de pistas, sino un vínculo directo con las sombras. Algo lo observaba. Algo lo deseaba. Las sombras mismas se levantaban a su alrededor, como una fuerza invisible pero palpable, comenzando a tomar forma.</div>
+                <br>
+                <div class="floating-box hidden">Con un súbito destello de claridad, Astolfo comprendió que las sombras no solo lo estaban acechando, sino que lo necesitaban. Si no se unía a ellas, su destino sería más oscuro y más definitivo que cualquier muerte. Las voces comenzaron a susurrar, de manera casi imperceptible, como si vinieran de todas partes, pero a medida que las palabras se agrupaban, la presión aumentaba.</div>
+                <br>
+                <div class="floating-box hidden">Un susurro surgió, pero esta vez no fue solo uno, sino una multitud de voces. Miles de susurros resonaron al mismo tiempo, mezclándose en un único y aterrador sonido. Como si fueran todas las almas atrapadas en la red, hablando a la vez, pidiendo ser escuchadas. La sensación de estar rodeado por miles de presencias se hizo abrumadora, como si cada sombra tuviera una historia que contar, pero todas estaban atrapadas en un grito desesperado, clamando por su liberación.</div>
+                <br>
+                <div class="floating-box hidden"><i>"¡Astolfo! No puedes escapar. El precio de tu curiosidad es la pertenencia. Tú también serás uno de nosotros."</i></div>
+                <br>
+                <div class="floating-box hidden"><i>"¡Únete a nosotros! Lo sabes, lo sientes. El tiempo se acaba."</i></div>
+                <br>
+                <div class="floating-box hidden"><i>"No hay vuelta atrás. Cada respuesta te ata más, y la red no perdona a los que dudan."</i></div>
+                <br>
+                <div class="floating-box hidden">Astolfo comenzó a respirar con dificultad. Las sombras no solo lo rodeaban, sino que lo presionaban, como si quisieran entrar en su cuerpo y alma. El cuaderno comenzó a vibrar en sus manos, y las palabras cambiaron una vez más, revelando otro acertijo, uno mucho más peligroso.</div>
+                <br>
+                <div class="floating-box hidden"><i><strong>"Nunca llegas a mí, aunque siempre avanzo. No tengo forma, pero aún así, puedo cambiarlo todo. Estoy más cerca de ti cuando menos lo esperas, pero también soy invisible cuando te acercas. Si me detienes, todo se desmorona, pero si me sigues, te desvaneces. ¿Quién soy?"</strong></i></div>
+                <br>
+                <div class="floating-box hidden">Las voces se intensificaron. Astolfo podía sentir cómo sus pensamientos se volvían más borrosos, como si las sombras estuvieran sugestionándolo, empujando su mente hacia el caos. La presión sobre su pecho aumentó, como si un millón de manos invisibles lo estuvieran estrangulando. Sabía que no podía responder sin pensar, sin examinar cada palabra con la máxima precisión. Pero las voces no le dieron tiempo.</div>
+                <br>
+                <div class="floating-box hidden"><i>"¡Rápido, responde! ¡El tiempo se acaba!"</i></div>
+                <br>
+                <div class="floating-box hidden"><i>"No te atrevas a fallar. La red nunca perdona a los que titubean."</i></div>
+                <br>
+                <div class="floating-box hidden">Las sombras no solo hablaban; estaban buscando su respuesta. Astolfo sintió cómo cada palabra lo absorbía, y cómo las sombras lo presionaban a responder sin dudar. La ira de las voces se hizo más intensa, más urgente. Había algo en ellas que no solo pedía una respuesta correcta, sino que la exigía. La necesidad de atrapar su alma era palpable, y la atmósfera, antes ya densa, se volvía más opresiva con cada segundo.</div>
+                <br>
+                <div class="floating-box hidden">El aire se cortó como un cuchillo. Astolfo cerró los ojos, intentando bloquear las voces, pero sabía que no podía escapar de la presión que sentía. Las sombras no se retiraban, sino que se acercaban más, como una marea imparable, aplastando sus pensamientos con su peso.</div>
+                <br>
+                <div class="floating-box hidden">Finalmente, después de lo que pareció una eternidad, Astolfo entendió. La respuesta era algo simple, algo que siempre había estado presente, pero nunca lo había considerado de manera consciente.</div>
+                <br>
+                <div class="floating-box hidden">Astolfo respiró profundamente y, con voz temblorosa pero firme, dio su respuesta:</div>
+                <br>
+        </section>
+    </div>    
+    <div>
+        <label for="respuesta">Tu respuesta:</label>
+        <input type="text" id="respuesta" placeholder="Escribe tu respuesta aquí">
+        <button onclick="verificarRespuesta()">Verificar respuesta</button>
+    
+        <p id="mensaje"></p>
+        <p id="pista"></p>
+    
+        <!-- Enlace a la siguiente página solo si la respuesta es correcta -->
+        <a id="siguiente-acertijo" href="fourthpage.html" style="display:none;">Ir al siguiente acertijo</a>
+    
+        <script>
+            var intentos = 0; // Contador de intentos fallidos
+            var respuestasAlternativas = ["el espacio", "the space"]; // Respuestas correctas posibles
+            var pista = "No me tocas, pero siempre me sigues. Si me alcanzas, ya es demasiado tarde para retroceder. Estoy presente sin ser notado, y mi naturaleza cambia solo con el tiempo."; // Pista única
+    
+            function verificarRespuesta() {
+                // Obtener la respuesta del usuario
+                var respuestaUsuario = document.getElementById('respuesta').value.trim().toLowerCase();
+    
+                // Mensaje de resultado
+                var mensaje = document.getElementById('mensaje');
+                var pistaElemento = document.getElementById('pista');
+                var siguienteAcertijo = document.getElementById('siguiente-acertijo');
+    
+                // Verificar si la respuesta es correcta
+                if (respuestasAlternativas.includes(respuestaUsuario)) {
+                    mensaje.innerHTML = "<strong>¡Correcto!</strong> Las sombras se apartan lentamente, revelando el camino hacia el templo.";
+                    pistaElemento.innerHTML = ""; // Limpiar pistas si la respuesta es correcta
+                    siguienteAcertijo.style.display = "block"; // Mostrar el enlace al siguiente acertijo
+                } else {
+                    intentos++; // Aumentar contador de intentos fallidos
+    
+                    if (intentos < 5) {
+                        mensaje.innerHTML = "<strong>Incorrecto</strong>. Intenta de nuevo.";
+                        pistaElemento.innerHTML = ""; // Limpiar pista si no se ha alcanzado el límite de intentos
+                    } else {
+                        // Mostrar la pista luego de 5 intentos fallidos
+                        mensaje.innerHTML = "<strong>Incorrecto</strong>. Has fallado varias veces, aquí tienes una pista:";
+                        pistaElemento.innerHTML = pista; // Mostrar la pista única
+                    }
+                }
+            }
+        </script>
+    </div>
+
+</body>
+</html>

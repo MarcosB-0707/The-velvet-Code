@@ -1,0 +1,95 @@
+html{
+    background-color: rgb(10, 12, 32);
+    font-family: "Red Hat Display", serif;
+    color: white;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+    text-align: center;
+    overflow-y: auto; /* Permite el scroll cuando sea necesario */
+}
+.container{
+    width: 60em;
+
+}
+.floating-box{
+        background-color: #5a1085b9;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.floating-box.hidden{
+        opacity: 1;
+        transform: translateY(0);
+}
+
+.answer{
+        background-color: #5c0f88b9;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(253, 253, 253, 0.61);
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+p {
+ font-size: 1.1rem;
+}
+
+.fancy_button{
+    display: inline-block;
+    text-align: center; /* Centrado horizontal */
+    vertical-align: middle; /* Alineación vertical respecto a otros elementos */
+    padding: 10px 10px;
+}
+
+.fancy_button{
+    justify-content: flex-start;
+    align-items: center;     
+    gap: 40px;
+    height:  20px;                  
+}
+
+.fancy_button{ 
+    background-color: #160094d7; 
+    color: rgb(202, 202, 202);    
+    padding: 5px 8px 18px 8px;           
+    border: 2px solid transparent; 
+    border-radius: 6px;         
+    font-size: 0.8em;             
+    font-weight: bold;           
+    text-transform: uppercase;   
+    cursor: pointer;            
+    transition: all 0.3s ease; 
+}
+
+.fancy_button:hover {
+    background-color: #661377d8; 
+    border-color: #c3ffc6; 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-4px); 
+  }
+
+  .fancy_button:active {
+    background-color: hsl(0, 0%, 100%); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: translateY(2px); 
+}
+img{
+    width: 590px;
+    height: 700px;
+}

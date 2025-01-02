@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <title>The velvet Code</title>
+   
+</head>
+<body>
+        <audio id="audio-player" autoplay loop>
+            <source src="audio/pista-2.mp3" type="audio/mpeg">
+        </audio>
+        <div>
+            <!-- Control deslizante de volumen -->
+            <label for="volume">Volumen:</label>
+            <input type="range" id="volume" name="volume" min="0" max="1" step="0.01" value="1">
+            <br><br>
+            
+            <!-- Botones para subir y bajar el volumen -->
+            <button onclick="adjustVolume('up')">+</button>
+            <button onclick="adjustVolume('down')">-</button>
+            
+            <!-- Botón para pausar o reanudar la música -->
+            <button onclick="togglePlayPause()">Pausa/Play</button>
+        
+            <script>
+                var audioPlayer = document.getElementById('audio-player');
+                var volumenControl = document.getElementById('volume');
+                
+                // Control de volumen con control deslizante
+                volumenControl.addEventListener('input', function() {
+                    audioPlayer.volume = volumenControl.value;
+                });
+        
+                // Función para pausar o reanudar la música
+                function togglePlayPause() {
+                    if (audioPlayer.paused || audioPlayer.ended) {
+                        audioPlayer.play(); // Si está en pausa o terminó, reproduce desde donde quedó
+                    } else {
+                        audioPlayer.pause(); // Si está reproduciendo, lo pausa
+                    }
+                }
+        
+                // Función para subir o bajar el volumen
+                function adjustVolume(action) {
+                    if (action === 'up' && audioPlayer.volume < 1) {
+                        audioPlayer.volume += 0.1;  // Sube el volumen en pasos de 0.1
+                    } else if (action === 'down' && audioPlayer.volume > 0) {
+                        audioPlayer.volume -= 0.1;  // Baja el volumen en pasos de 0.1
+                    }
+                    volumenControl.value = audioPlayer.volume;  // Actualiza el control deslizante
+                }
+            </script>
+
+            <div class="container">
+                <br> <br>
+                <div class="floating-box hidden">Al escribir la respuesta en el cuaderno rojo, Astolfo observa cómo los símbolos en las páginas del cuaderno comienzan a brillar suavemente. El cuaderno parece reaccionar a su respuesta, y las palabras se reconfiguran, revelando un mapa antiguo de la ciudad de Tokio, con una ubicación marcada: el templo escondido en las montañas, donde la oscuridad y la luz se encuentran.</div>
+                <br>
+                <div class="floating-box hidden">El aire a su alrededor se vuelve denso, como si las sombras mismas lo rodearan. Astolfo sabe que, con esta pista, está más cerca de desvelar el misterio de la red de sombras. Sin embargo, también entiende que cada respuesta correcta lo acerca más a un peligro aún mayor.</div>
+                <br>
+                <div class="floating-box hidden">Astolfo avanza por el estrecho sendero que lo conduce al templo escondido, rodeado por un silencio ominoso que parece engullir todo a su paso. Cuanto más se acerca a su destino, más densas se vuelven las sombras a su alrededor. Es como si las mismas sombras fueran criaturas vivas, envolviéndolo y susurrando en su oído, presionando contra su pecho, dificultando su respiración.</div>
+                <br>
+                <div class="floating-box hidden">De repente, la luz de la luna desaparece por completo, sumiendo el bosque en una oscuridad palpable. La temperatura desciende, y una sensación extraña recorre su cuerpo. El aire frío le cortaba la piel. Las hojas crujían bajo sus pies, pero más allá de eso, había algo extraño en el silencio que lo rodeaba. No podía precisar qué era, pero sentía una presión en el pecho, como si algo lo observase. Sentia como si las sombras estuvieran intentando asfixiarlo, estrechándose a su alrededor, como si intentaran devorarlo por completo.</div>
+                <br>
+                <div class="floating-box hidden">De repente, una voz susurró, suave, casi imperceptible:</div>
+                <br>
+                <div class="floating-box hidden"> <i>"¿Qué harías si fueras tú el que siempre está esperando, sin fin?"</i></div>
+                <br>
+                <div class="floating-box hidden">Astolfo se detuvo en seco, la pregunta lo dejó desconcertado. Las sombras parecían moverse a su alrededor, transformándose en figuras inquebrantables.</div>
+                <br>
+                <div class="floating-box hidden">"¿Esperando?", pensó. "¿Esperando qué?" Las palabras flotaban en su mente sin sentido, y la presión en su pecho aumentaba.</div>
+                <br>
+                <div class="floating-box hidden">Luego, otra voz surgió, aún más cerca:</div>
+                <br>
+                <div class="floating-box hidden"><i>"Tú sabes lo que está frente a ti. Sin embargo, no te atreves a aceptarlo. ¿Es el temor lo que te detiene, o la ignorancia?"</i></div>
+                <br>    
+                <div class="floating-box hidden">Un escalofrío recorrió su espalda. ¿Qué sabían esas sombras sobre él? ¿Qué querían de él? El aire parecía volverse más espeso y pesado. Las sombras continuaron en su reticencia, fluyendo como un río de susurros.</div>
+                <br>
+                <div class="floating-box hidden"><i>"Haz la elección, Astolfo. Tienes una sola oportunidad para escapar de lo que te acecha. Dime, ¿qué es lo que se mueve siempre sin tocarte, siempre presente pero invisible? No lo sientes, no lo ves, pero te acompaña. Dime, ¿qué es?"</i></div>
+                <br>
+                <div class="floating-box hidden">Astolfo no podía entender, pero algo en sus entrañas le decía que las respuestas estaban en sus pensamientos. Las sombras lo rodeaban más, sus formas cambiaban con cada paso, acercándose más a él.</div>
+                <br>
+                <div class="floating-box hidden"><i>"Si sabes lo que es, serás libre. Si no, te quedas aquí...para siempre."</i></div>
+                <br><br>
+            </div>
+        </div>
+        <div>
+            <label for="respuesta">Tu respuesta:</label>
+            <input type="text" id="respuesta" placeholder="Escribe tu respuesta aquí">
+            <button onclick="verificarRespuesta()">Verificar respuesta</button>
+        
+            <p id="mensaje"></p>
+            <p id="pista"></p>
+        
+            <!-- Enlace a la siguiente página solo si la respuesta es correcta -->
+            <a id="siguiente-acertijo" href="thirdpage.html" style="display:none;">Ir al siguiente acertijo</a>
+        
+            <script>
+                var intentos = 0; // Contador de intentos fallidos
+                var respuestasAlternativas = ["el tiempo", "the time"]; // Respuestas correctas posibles
+                var pista = "Pista: Es algo que se escapa siempre, pero nunca se aleja. Nunca lo retienes, pero siempre lo tienes. No tiene forma, pero marca el camino."; // Pista única
+        
+                function verificarRespuesta() {
+                    // Obtener la respuesta del usuario
+                    var respuestaUsuario = document.getElementById('respuesta').value.trim().toLowerCase();
+        
+                    // Mensaje de resultado
+                    var mensaje = document.getElementById('mensaje');
+                    var pistaElemento = document.getElementById('pista');
+                    var siguienteAcertijo = document.getElementById('siguiente-acertijo');
+        
+                    // Verificar si la respuesta es correcta
+                    if (respuestasAlternativas.includes(respuestaUsuario)) {
+                        mensaje.innerHTML = "<strong>¡Correcto!</strong> Las sombras se apartan lentamente, revelando el camino hacia el templo.";
+                        pistaElemento.innerHTML = ""; // Limpiar pistas si la respuesta es correcta
+                        siguienteAcertijo.style.display = "block"; // Mostrar el enlace al siguiente acertijo
+                    } else {
+                        intentos++; // Aumentar contador de intentos fallidos
+        
+                        if (intentos < 5) {
+                            mensaje.innerHTML = "<strong>Incorrecto</strong>. Intenta de nuevo.";
+                            pistaElemento.innerHTML = ""; // Limpiar pista si no se ha alcanzado el límite de intentos
+                        } else {
+                            // Mostrar la pista luego de 5 intentos fallidos
+                            mensaje.innerHTML = "<strong>Incorrecto</strong>. Has fallado varias veces, aquí tienes una pista:";
+                            pistaElemento.innerHTML = pista; // Mostrar la pista única
+                        }
+                    }
+                }
+            </script>
+        </div>
+
+</body>
+</html>
